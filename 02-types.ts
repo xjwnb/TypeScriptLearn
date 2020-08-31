@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-31 07:44:01
- * @LastEditTime: 2020-08-31 08:36:14
+ * @LastEditTime: 2020-08-31 09:29:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \小卡车的博客f:\Github_my_project\TypeScriptLearn\typescript\02-types.ts
@@ -31,9 +31,10 @@ str = "Hello 小卡车"
 // 数组类型
 let arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(arr)      // [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
 let arr1: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(arr1)        // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let arr3: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(arr3)
 
 // 元组类型
 let arr2: [string, number, boolean] = ["小卡车", 18, true]
@@ -78,3 +79,35 @@ console.log(green1)       // 6
 console.log(blue1)        // 7
 console.log(orange1)      // 1
 console.log(black1)       // 2
+// 枚举可由值获得键名
+let colorName: string = Color1[6]
+console.log(colorName)   // green
+
+// 任意类型
+var any1: any = "小卡车"
+any1 = 18
+any1 = true
+console.log(any1)       // true
+
+// undefined 类型
+var num1: number
+// console.log(num1)  // 编译不通过，报错，但是可以显示值为 undefined
+var num2: undefined
+console.log(num2)     // undefined
+var num3: number | undefined
+console.log(num3)     // undefined
+
+// null 类型
+var num4: null
+console.log(null)     // null
+// num4 = 123            // 报错
+
+// void 类型
+function fn1(): void { }
+fn1()
+
+// never 类型
+function error(message: string): never {
+  throw new Error(message)
+}
+
